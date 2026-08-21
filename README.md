@@ -93,8 +93,7 @@ Any input that doesn't match a keyword triggers the **fallback response** system
 _Add screenshots of the running app here._
 
 ```
-assets/screenshot-desktop.png
-assets/screenshot-mobile.png
+<img width="1912" height="912" alt="image" src="https://github.com/user-attachments/assets/2607e170-29b1-4780-af6f-7a01452df999" />
 ```
 
 ---
