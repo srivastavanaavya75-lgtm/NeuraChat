@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="NeuraChat - A premium rule-based AI assistant."
+    >
+
+    <meta
+        name="theme-color"
+        content="#080511"
+    >
+
+    <title>NeuraChat | Rule-Based AI</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./style.css?v=999"
+    >
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div
+        class="background"
+        aria-hidden="true"
+    >
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="orb orb-three"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+
+    <!-- APP -->
+    <main class="app">
+
+        <div class="app-layout">
+
+            <!-- MASCOT -->
+            <section
+                class="mascot-panel"
+                aria-label="NeuraChat mascot"
+            >
+
+                <div class="mascot-image-wrap">
+
+                    <div
+                        class="mascot-glow"
+                        aria-hidden="true"
+                    ></div>
+
+                    <img
+                        src="./assets/neurachat-mascot.png"
+                        alt="NeuraChat AI mascot"
+                        class="mascot-image"
+                    >
+
+                </div>
+
+                <div class="mascot-caption">
+
+                    <span
+                        class="mascot-status-dot"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span>
+                        NeuraChat is ready
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- CHAT -->
+            <section
+                class="chat-shell"
+                aria-label="NeuraChat"
+            >
+
+                <!-- HEADER -->
+                <header class="chat-header">
+
+                    <div class="brand">
+
+                        <div
+                            class="logo"
+                            aria-hidden="true"
+                        >
+                            ✦
+                        </div>
+
+                        <div class="brand-text">
+
+                            <h1>
+                                NeuraChat
+                            </h1>
+
+                            <p>
+                                Rule-Based AI Assistant
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="header-actions">
+
+                        <div
+                            class="status-pill"
+                            aria-label="System status: Online"
+                        >
+                            <span
+                                class="status-dot"
+                                aria-hidden="true"
+                            ></span>
+
+                            <span>
+                                Online
+                            </span>
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="clear-btn"
+                            id="clearChatBtn"
+                            aria-label="Clear conversation"
+                            title="Clear conversation"
+                        >
+                            ↻
+                            <span>
+                                Clear
+                            </span>
+                        </button>
+
+                    </div>
+
+                </header>
+
+
+                <!-- ENGINE -->
+                <div class="engine-strip">
+
+                    <span class="engine-badge">
+
+                        <span
+                            class="engine-dot"
+                            aria-hidden="true"
+                        ></span>
+
+                        LOCAL ENGINE
+
+                    </span>
+
+                    <span class="separator">
+                        /
+                    </span>
+
+                    <span>
+                        NO EXTERNAL API
+                    </span>
+
+                    <span class="separator">
+                        /
+                    </span>
+
+                    <span>
+                        DETERMINISTIC
+                    </span>
+
+                </div>
+
+
+                <!-- CHAT LOG -->
+                <div
+                    class="chat-log"
+                    id="chatLog"
+                    role="log"
+                    aria-live="polite"
+                    aria-label="Conversation"
+                ></div>
+
+
+                <!-- TYPING -->
+                <div
+                    class="typing-row"
+                    id="typingRow"
+                    hidden
+                    aria-label="NeuraChat is typing"
+                >
+
+                    <div class="avatar bot-avatar">
+                        ✦
+                    </div>
+
+                    <div class="typing-bubble">
+
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+                        <span class="typing-dot"></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUGGESTIONS -->
+                <div
+                    class="suggestions"
+                    id="suggestions"
+                    aria-label="Suggested prompts"
+                >
+
+                    <button
+                        type="button"
+                        class="chip"
+                        data-message="Hello"
+                    >
+                        Hello 👋
+                    </button>
+
+                    <button
+                        type="button"
+                        class="chip"
+                        data-message="Who are you?"
+                    >
+                        Who are you?
+                    </button>
+
+                    <button
+                        type="button"
+                        class="chip"
+                        data-message="What can you do?"
+                    >
+                        What can you do?
+                    </button>
+
+                    <button
+                        type="button"
+                        class="chip"
+                        data-message="How are you?"
+                    >
+                        How are you?
+                    </button>
+
+                </div>
+
+
+                <!-- INPUT -->
+                <form
+                    class="input-bar"
+                    id="chatForm"
+                    autocomplete="off"
+                >
+
+                    <input
+                        type="text"
+                        id="messageInput"
+                        name="message"
+                        class="message-input"
+                        placeholder="Type your message..."
+                        maxlength="500"
+                        autocomplete="off"
+                        spellcheck="true"
+                        aria-label="Type your message"
+                    >
+
+                    <button
+                        type="submit"
+                        id="sendBtn"
+                        class="send-btn"
+                        aria-label="Send message"
+                        title="Send message"
+                    >
+                        ↑
+                    </button>
+
+                </form>
+
+
+                <p
+                    class="input-hint"
+                    id="inputHint"
+                    aria-live="polite"
+                ></p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- CACHE-BUSTED SCRIPT -->
+    <script src="./script.js?v=999"></script>
+
+</body>
+</html>
