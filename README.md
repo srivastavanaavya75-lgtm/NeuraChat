@@ -1,7 +1,7 @@
 # 💜 NeuraChat
 
 <p align="center">
-  <img src="assets/neurachat-mascot.png" alt="NeuraChat Mascot" width="280">
+  <img src="assets/neurachat-mascot.png" alt="NeuraChat Mascot" width="300">
 </p>
 
 <p align="center">
@@ -9,26 +9,35 @@
 </p>
 
 <p align="center">
-  A lightweight, fast, and privacy-friendly AI assistant built with Python using a rule-based conversational engine.
+  A lightweight, fully local, rule-based AI assistant built with Python for fast, interactive, and privacy-friendly conversations without relying on external AI APIs.
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/AI-Rule%20Based-A855F7?style=for-the-badge" alt="Rule Based AI">
+  <img src="https://img.shields.io/badge/AI-Rule--Based-A855F7?style=for-the-badge" alt="Rule-Based AI">
   <img src="https://img.shields.io/badge/Architecture-Modular-7C3AED?style=for-the-badge" alt="Modular Architecture">
-  <img src="https://img.shields.io/badge/API%20Dependency-None-22C55E?style=for-the-badge" alt="No API Dependency">
+  <img src="https://img.shields.io/badge/Local--First-22C55E?style=for-the-badge" alt="Local First">
   <img src="https://img.shields.io/badge/Status-Completed-22C55E?style=for-the-badge" alt="Completed">
 </p>
 
 ---
 
-## 📌 Overview
+## 🌌 Overview
 
-**NeuraChat** is a premium rule-based AI assistant developed in Python. It is designed to simulate an AI-powered conversational experience using locally implemented logic rather than relying on external Large Language Models or paid AI APIs.
+**NeuraChat** is a premium rule-based AI assistant developed with Python.
 
-The system processes user input, identifies relevant keywords and conversational patterns, maps them to predefined intents, and generates an appropriate response.
+Instead of depending on external Large Language Models or paid AI APIs, NeuraChat uses a structured conversational engine based on keyword matching, pattern recognition, intent detection, conditional logic, and predefined responses.
 
-NeuraChat focuses on the fundamentals of conversational AI while keeping the application lightweight, transparent, customizable, and easy to run locally.
+The project demonstrates the fundamentals of conversational AI while keeping the system lightweight, transparent, customizable, and easy to run locally.
+
+### 🎯 Project Goals
+
+- Build a functional AI-style conversational assistant using Python
+- Understand the fundamentals of conversational AI
+- Implement intent and keyword-based response handling
+- Create a lightweight local-first assistant
+- Design an architecture that can be expanded over time
+- Demonstrate practical AI engineering concepts without requiring an external LLM
 
 ---
 
@@ -45,38 +54,10 @@ NeuraChat focuses on the fundamentals of conversational AI while keeping the app
 - 🧩 Modular and extensible architecture
 - 🛡️ Fallback handling for unsupported queries
 - 👋 Greeting and farewell handling
-- 🤖 AI-assistant identity responses
+- 🤖 Assistant identity responses
 - ❓ Help and general conversational responses
-- 🔧 Easy-to-expand response rules
+- 🔧 Easily customizable response rules
 - 📦 Minimal dependency requirements
-
----
-
-## 🧠 How It Works
-
-NeuraChat follows a simple conversational processing pipeline:
-
-```text
-User Input
-    │
-    ▼
-Input Processing
-    │
-    ▼
-Keyword / Pattern Matching
-    │
-    ▼
-Intent Detection
-    │
-    ▼
-Rule-Based Decision Engine
-    │
-    ▼
-Response Selection
-    │
-    ▼
-NeuraChat Response
-
 
 ---
 
@@ -105,7 +86,7 @@ NeuraChat Response
 
 ## 🏗️ Architecture
 
-NeuraChat is built around a lightweight rule-based architecture:
+NeuraChat follows a lightweight rule-based conversational architecture.
 
     ┌─────────────────────┐
     │      User Input     │
@@ -140,6 +121,22 @@ NeuraChat is built around a lightweight rule-based architecture:
     ┌─────────────────────┐
     │     AI Response     │
     └─────────────────────┘
+
+### Processing Flow
+
+    User Message
+         ↓
+    Normalize Input
+         ↓
+    Extract Keywords / Patterns
+         ↓
+    Identify Intent
+         ↓
+    Match Against Rules
+         ↓
+    Select Response
+         ↓
+    Return Assistant Response
 
 ---
 
@@ -238,9 +235,9 @@ The assistant will start locally and allow you to interact with it through the a
 
 ## 🔧 Customization
 
-NeuraChat is designed to be easy to customize.
+NeuraChat is designed to be easy to customize and extend.
 
-Developers can extend the assistant by adding:
+Developers can add:
 
 - New keywords
 - New intents
@@ -249,12 +246,12 @@ Developers can extend the assistant by adding:
 - Additional fallback responses
 - New assistant capabilities
 
-Example:
+Example rule:
 
     if "hello" in user_input:
         return "Hello! How can I help you?"
 
-Additional rules can be introduced to expand the assistant's conversational capabilities.
+Additional rules can be introduced to expand the assistant's conversational capabilities without changing the overall architecture.
 
 ---
 
@@ -264,7 +261,7 @@ NeuraChat follows a local-first approach.
 
 The core conversational system does not require sending user messages to an external AI service.
 
-This means the basic assistant can operate without:
+The basic assistant can operate without:
 
 - OpenAI API
 - Gemini API
@@ -290,24 +287,26 @@ The project provides practical exposure to:
 - Response generation
 - AI assistant architecture
 
-It also provides a foundation for gradually introducing more advanced technologies such as NLP, machine learning, and LLMs.
+Rule-based systems also provide transparency because the developer can directly inspect how an input is mapped to a response.
+
+NeuraChat can therefore serve as a foundation for gradually introducing more advanced technologies such as NLP, machine learning, and LLMs.
 
 ---
 
 ## 📊 Key Concepts Demonstrated
 
-- Python application development
-- Artificial Intelligence fundamentals
-- Rule-based systems
-- Natural-language input handling
-- Keyword matching
-- Pattern recognition
-- Intent classification
-- Conditional logic
-- Conversational design
-- Modular architecture
-- Local application development
-- Error and fallback handling
+- 🐍 Python application development
+- 🧠 Artificial Intelligence fundamentals
+- 🔀 Rule-based systems
+- 📝 Natural-language input handling
+- 🔍 Keyword matching
+- 🎯 Pattern recognition
+- 🧩 Intent classification
+- ⚙️ Conditional logic
+- 💬 Conversational design
+- 🏗️ Modular architecture
+- 💻 Local application development
+- 🛡️ Error and fallback handling
 
 ---
 
@@ -373,7 +372,9 @@ Through NeuraChat, the project demonstrates practical understanding of:
 
 **Status: Completed ✅**
 
-NeuraChat is a functional rule-based conversational AI project and provides a foundation for experimenting with more advanced AI technologies in future versions.
+NeuraChat is a functional rule-based conversational AI project that demonstrates the foundations of chatbot and conversational-system development.
+
+The current implementation provides a lightweight foundation that can be expanded with NLP, machine learning, voice capabilities, knowledge retrieval, or optional LLM integration in future versions.
 
 ---
 
@@ -383,7 +384,7 @@ NeuraChat is a functional rule-based conversational AI project and provides a fo
 
 **B.Tech CSE (Data Science)**
 
-Focused on:
+Interested in:
 
 - Artificial Intelligence
 - Machine Learning
