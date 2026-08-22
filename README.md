@@ -1,139 +1,86 @@
-# NeuraChat — Rule-Based AI Assistant
+# 💜 NeuraChat
 
-A polished, portfolio-ready **rule-based chatbot** built with vanilla HTML, CSS, and JavaScript. NeuraChat matches user input against a deterministic knowledge base of intents and responds accordingly — no external AI model, no API calls, no backend.
+<p align="center">
+  <img src="assets/neurachat-mascot.png" alt="NeuraChat Mascot" width="420">
+</p>
 
-> **This project implements a deterministic rule-based chatbot and does not use an external LLM or generative AI API.**
+<h3 align="center">A Premium Rule-Based AI Assistant</h3>
 
----
+<p align="center">
+  A beautifully designed, fully client-side conversational assistant built with
+  <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>Vanilla JavaScript</strong>.
+</p>
 
-## Features
-
-- 🧠 **7 built-in intents** — greeting, identity, capabilities, help, thanks, status, goodbye
-- 🔤 **Input normalization** — case-insensitive, whitespace-tolerant matching
-- 🎲 **Response variation** — multiple pre-written replies per intent, chosen at random
-- 🛟 **Fallback system** — graceful response for unrecognized input
-- 👋 **Exit handling** — recognizes goodbye/exit commands, ends the session, and offers a restart
-- 💬 **Suggested prompt chips** — one-tap example messages
-- 💾 **Optional chat persistence** — conversation is restored from `localStorage` on reload
-- ♿ **Accessible** — semantic HTML, ARIA live regions, visible focus states, keyboard support
-- 📱 **Fully responsive** — desktop, tablet, and mobile layouts
-- 🎨 **Premium glassmorphism UI** — deep purple palette, soft neon glow, smooth animations
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|---|---|
-| Structure | HTML5 |
-| Styling | CSS3 (custom properties, glassmorphism, keyframe animations) |
-| Logic | Vanilla JavaScript (ES6+) |
-| Storage | Browser `localStorage` (optional persistence) |
-| Dependencies | None — no frameworks, no build step |
+<p align="center">
+  <a href="https://neura-chat-sepia.vercel.app/">
+    <img src="https://img.shields.io/badge/🚀%20Live%20Demo-NeuraChat-8B5CF6?style=for-the-badge" alt="Live Demo">
+  </a>
+  <a href="https://github.com/srivastavanaavya75-lgtm/NeuraChat">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub">
+  </a>
+</p>
 
 ---
 
-## How It Works
+## ✨ Overview
 
-NeuraChat follows a simple, transparent pipeline:
+**NeuraChat** is a premium browser-based conversational assistant that demonstrates how an AI-style chat experience can be built entirely on the frontend without relying on external AI APIs.
 
-```
-User Input
-    ↓
-normalizeInput()      → lowercase + trim + collapse whitespace
-    ↓
-detectIntent()        → keyword lookup against the knowledge base
-    ↓
-getResponse()         → random reply from the matched intent's pool
-    ↓
-addMessage()          → render bubble in the chat log
-```
+Instead of sending messages to a remote language model, NeuraChat uses a **deterministic rule-based engine** to recognize predefined intents and generate appropriate responses locally.
 
-If no intent matches, a randomly selected **fallback response** is returned instead.
+The project combines conversational logic with a polished dark-purple interface, responsive layouts, interactive message bubbles, typing states, local memory, and a custom AI mascot.
 
-### Rule Engine Architecture
-
-The knowledge base is a plain JavaScript object, so lookups are O(number of intents), not a long `if/else` chain:
-
-```javascript
-const KNOWLEDGE_BASE = {
-  greeting: {
-    keywords: ["hi", "hello", "hey", "good morning", ...],
-    responses: ["Hello! 👋 How can I help you today?", ...]
-  },
-  identity: { keywords: [...], responses: [...] },
-  capabilities: { keywords: [...], responses: [...] },
-  help: { keywords: [...], responses: [...] },
-  thanks: { keywords: [...], responses: [...] },
-  status: { keywords: [...], responses: [...] },
-  goodbye: { keywords: [...], responses: [...] }
-};
-```
-
-`detectIntent()` checks the normalized input against each intent's keyword list using `Array.prototype.some()` and `String.prototype.includes()` — no nested conditionals, fully data-driven.
-
-### Supported Intents
-
-| Intent | Example triggers |
-|---|---|
-| Greeting | hi, hello, hey, good morning |
-| Identity | who are you, what's your name |
-| Capabilities | what can you do, help me |
-| Help | help, how does this work |
-| Thanks | thanks, thank you, appreciate it |
-| Status | how are you, what's up |
-| Goodbye | bye, goodbye, exit, quit |
-
-Any input that doesn't match a keyword triggers the **fallback response** system.
+> **No external AI API. No backend. No server-side processing. Just a lightweight local conversational engine running directly in the browser.**
 
 ---
 
----
+## 🚀 Live Demo
 
-## Installation
+### [🌐 Try NeuraChat Live](https://neura-chat-sepia.vercel.app/)
 
-No build tools or dependencies required.
-
-1. Download or clone this folder.
-2. Open `index.html` directly in your browser, **or**
-3. Serve it locally with VS Code's Live Server extension (recommended for accurate `localStorage` behavior):
-   - Right-click `index.html` → **Open with Live Server**
+Experience the complete application directly in your browser.
 
 ---
 
-## Usage
+## 🎯 What NeuraChat Can Do
 
-- Type a message and press **Enter** (or tap the send button).
-- Try the suggestion chips for quick examples: *Hello 👋*, *Who are you?*, *What can you do?*, *Help*.
-- Say **bye** / **goodbye** / **exit** / **quit** to end the conversation. Tap **Start New Chat** to begin again.
-- Use the **Clear** button in the header at any time to reset the conversation.
+NeuraChat currently supports a collection of predefined conversational intents, including:
+
+- 👋 Greetings
+- 👤 Identity and introduction
+- 🧠 Capability questions
+- 😊 Basic conversational interactions
+- 💭 Common questions
+- 📝 Local name recognition
+- 💬 Context-aware responses for supported intents
+- ❓ Intelligent fallback responses
+- 🧹 Conversation clearing
+- 💡 Suggested prompts
+- ⌨️ Enter-to-send interaction
+
+The assistant is intentionally **rule-based and deterministic**, making its behavior predictable and transparent.
 
 ---
 
-## Project Structure
+## 🧠 How It Works
+
+NeuraChat follows a simple local processing pipeline:
 
 ```text
-decode-chatbot/
-│
-├── index.html      # App markup and structure
-├── style.css        # Purple glassmorphism design system
-├── script.js         # Rule-based engine + UI logic
-├── README.md
-└── assets/
-    └── ...           # Screenshots, etc.
-```
-
----
-
-## Future Improvements
-
-- Add more intents (weather, jokes, FAQs) using the same keyword/response pattern
-- Support multi-keyword confidence scoring for ambiguous phrases
-- Add a light theme toggle
-- Export conversation as a `.txt` transcript
-
----
-
-## Author
-
-Built as part of the **DecodeLabs Industrial Training — Project 1: Rule-Based AI Chatbot** assignment.
+User Message
+      │
+      ▼
+Input Normalization
+      │
+      ▼
+Intent Matching
+      │
+      ├── Known Intent ──► Predefined Response
+      │
+      └── Unknown Intent ─► Fallback Response
+      │
+      ▼
+Chat UI Update
+      │
+      ▼
+Local Conversation State
